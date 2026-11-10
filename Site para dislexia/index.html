@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DislexiaAtiva | Leitura Acessível</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fonte amigável para leitura por padrão -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="theme-cream spacing-normal font-default">
+
+    <!-- BARRA DE ACESSIBILIDADE FIXA -->
+    <aside class="accessibility-bar" aria-label="Ferramentas de Leitura">
+        <div class="acc-group">
+            <span class="acc-title"><i class="fa-solid fa-eye"></i> Leitura</span>
+            <button id="btnRegua" class="acc-btn"><i class="fa-solid fa-ruler-horizontal"></i> Régua de Foco</button>
+            <button id="btnVoz" class="acc-btn"><i class="fa-solid fa-volume-high"></i> Ler Conteúdo</button>
+        </div>
+
+        <div class="acc-group">
+            <span class="acc-title"><i class="fa-solid fa-font"></i> Texto</span>
+            <button id="btnFonte" class="acc-btn"><i class="fa-solid fa-font"></i> Fonte OpenDyslexic</button>
+            <button id="btnEspacamento" class="acc-btn"><i class="fa-solid fa-text-height"></i> Espaçamento +</button>
+        </div>
+
+        <div class="acc-group">
+            <span class="acc-title"><i class="fa-solid fa-palette"></i> Fundo</span>
+            <button class="color-btn bg-cream active" data-color="theme-cream" title="Fundo Creme"></button>
+            <button class="color-btn bg-pastel" data-color="theme-pastel" title="Fundo Azul Suave"></button>
+            <button class="color-btn bg-dark" data-color="theme-dark" title="Modo Escuro Ameno"></button>
+        </div>
+    </aside>
+
+    <!-- RÉGUA DE LEITURA (Elemento flutuante) -->
+    <div id="reguaLeitura" class="regua-leitura hidden"></div>
+
+    <!-- CABEÇALHO -->
+    <header class="header">
+        <div class="logo">
+            <i class="fa-solid fa-brain logo-icon"></i>
+            <span>Dislexia<strong>Ativa</strong></span>
+        </div>
+        <nav class="nav">
+            <a href="#sobre"><i class="fa-solid fa-book-open"></i> O que é</a>
+            <a href="#estretagias"><i class="fa-solid fa-lightbulb"></i> Estratégias</a>
+            <a href="#pratica"><i class="fa-solid fa-gamepad"></i> Treino Visual</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- BANNER DE BOAS-VINDAS -->
+        <section id="sobre" class="hero-card">
+            <span class="badge"><i class="fa-solid fa-shield-halved"></i> Design Amigável à Dislexia</span>
+            <h1>Aprender e ler no seu próprio ritmo</h1>
+            <p>Este espaço foi desenhado para evitar o cansaço visual. Use a barra lateral para ajustar a fonte, a cor do fundo e ativar a régua de leitura quando preferir.</p>
+        </section>
+
+        <!-- CARDS DE ESTRATÉGIAS -->
+        <section id="estretagias" class="section">
+            <h2>Estratégias de Leitura Facilitada</h2>
+            <div class="cards-grid">
+                
+                <article class="card">
+                    <div class="card-icon"><i class="fa-solid fa-layer-group"></i></div>
+                    <h3>Blocos Curtos de Texto</h3>
+                    <p>Parágrafos menores e frases diretas reduzem a sobrecarga de memória de trabalho e facilitam a compreensão.</p>
+                </article>
+
+                <article class="card">
+                    <div class="card-icon"><i class="fa-solid fa-palette"></i></div>
+                    <h3>Contraste Suave</h3>
+                    <p>Evitamos o fundo branco puro (#FFFFFF) com texto preto puro. Tons suaves reduzem a distorção visual e o movimento das letras.</p>
+                </article>
+
+                <article class="card">
+                    <div class="card-icon"><i class="fa-solid fa-ear-listen"></i></div>
+                    <h3>Apoio Multissensorial</h3>
+                    <p>Combinar a leitura visual com o som da fala (Text-to-Speech) reforça as conexões entre grafemas e fonemas.</p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- JOGO INTERATIVO DE CONSCIÊNCIA FONOLÓGICA -->
+        <section id="pratica" class="section game-section">
+            <h2><i class="fa-solid fa-puzzle-piece"></i> Treino Visual de Rima</h2>
+            <p>Selecione a palavra que tem o mesmo som final de: <strong id="palavraAlvo">GATO</strong></p>
+
+            <div id="opcoesJogo" class="game-options">
+                <!-- Inserido dinamicamente pelo JS -->
+            </div>
+
+            <div id="gameFeedback" class="feedback-box hidden"></div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 DislexiaAtiva. Plataforma adaptativa focada em acessibilidade cognitiva e visual.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

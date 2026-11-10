@@ -1,0 +1,303 @@
+/* Import da fonte aberta especial OpenDyslexic (via CDN gratuita) */
+@import url('https://fonts.cdnfonts.com/css/opendyslexic');
+
+:root {
+    --text-color: #2b2d42;
+    --bg-main: #f7f4ea; /* Creme por padrão (menos estresse visual) */
+    --card-bg: #ffffff;
+    --primary: #4a7c59;
+    --primary-hover: #3b6346;
+    --accent: #e07a5f;
+    --border: #d8d2c2;
+}
+
+/* TEMAS DE COR (Fundo e Contraste) */
+body.theme-cream {
+    --bg-main: #f7f4ea;
+    --text-color: #2b2d42;
+    --card-bg: #fffef9;
+    --border: #e2dbc9;
+}
+
+body.theme-pastel {
+    --bg-main: #e8f1f5;
+    --text-color: #1b263b;
+    --card-bg: #f4f8fb;
+    --border: #cddce5;
+}
+
+body.theme-dark {
+    --bg-main: #22252a;
+    --text-color: #e0e1dd;
+    --card-bg: #2d3137;
+    --border: #3f444c;
+}
+
+/* TIPOGRAFIA E ESPAÇAMENTO */
+body.font-default {
+    font-family: 'Lexend', sans-serif;
+}
+
+body.font-dyslexic {
+    font-family: 'OpenDyslexic', sans-serif !important;
+}
+
+body.spacing-normal {
+    letter-spacing: 0.03em;
+    word-spacing: 0.1em;
+    line-height: 1.7;
+}
+
+body.spacing-wide {
+    letter-spacing: 0.12em;
+    word-spacing: 0.25em;
+    line-height: 2.1;
+}
+
+/* ESTRUTURA GERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+/* BARRA DE ACESSIBILIDADE FIXA */
+.accessibility-bar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--card-bg);
+    border-bottom: 2px solid var(--border);
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.acc-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.acc-title {
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-right: 0.25rem;
+}
+
+.acc-btn {
+    background: var(--bg-main);
+    color: var(--text-color);
+    border: 1px solid var(--border);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: all 0.2s;
+}
+
+.acc-btn:hover, .acc-btn.active {
+    background-color: var(--primary);
+    color: #ffffff;
+    border-color: var(--primary);
+}
+
+.color-btn {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    cursor: pointer;
+}
+
+.color-btn.active {
+    transform: scale(1.2);
+    border-color: var(--primary);
+}
+
+.bg-cream { background-color: #f7f4ea; }
+.bg-pastel { background-color: #e8f1f5; }
+.bg-dark { background-color: #22252a; }
+
+/* RÉGUA DE LEITURA GUIA */
+.regua-leitura {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 45px;
+    background: rgba(255, 235, 59, 0.25);
+    border-top: 2px solid rgba(217, 119, 6, 0.6);
+    border-bottom: 2px solid rgba(217, 119, 6, 0.6);
+    pointer-events: none;
+    z-index: 9999;
+    transform: translateY(-50%);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* CABEÇALHO */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 1.5rem 0;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.4rem;
+    color: var(--primary);
+}
+
+.nav {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+}
+
+.nav a:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* CARDS E CONTEÚDO */
+.hero-card {
+    background-color: var(--card-bg);
+    border: 2px solid var(--border);
+    padding: 2.5rem;
+    border-radius: 12px;
+    margin-top: 1.5rem;
+}
+
+.hero-card h1 {
+    font-size: 2.2rem;
+    margin: 0.8rem 0;
+}
+
+.badge {
+    background-color: var(--accent);
+    color: #ffffff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.section {
+    margin-top: 3rem;
+}
+
+.section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 1.8rem;
+    border-radius: 10px;
+}
+
+.card-icon {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 0.8rem;
+}
+
+/* JOGO INTERATIVO */
+.game-section {
+    background-color: var(--card-bg);
+    border: 2px dashed var(--border);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.game-options {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.game-btn {
+    background-color: var(--bg-main);
+    color: var(--text-color);
+    border: 2px solid var(--border);
+    padding: 0.8rem 1.8rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.game-btn:hover {
+    transform: scale(1.05);
+    border-color: var(--primary);
+}
+
+.feedback-box {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.feedback-correct {
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+
+.feedback-wrong {
+    background-color: #f8d7da;
+    color: #842029;
+}
+
+.footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.9rem;
+}
